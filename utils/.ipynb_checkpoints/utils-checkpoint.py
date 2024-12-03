@@ -34,7 +34,7 @@ def transform_patient_data(df):
     df["GENDER"] = df["GENDER"].astype("string")
     df["ETHNICITY"] = df["ETHNICITY"].astype("string")
     df["RACE"] = df["RACE"].astype("string")
-    df['age'] = ((today - df['BIRTHDATE']).dt.days/365).round()  #Calculate age in years
+    df['age'] = (today - df['BIRTHDATE']).astype('<m8[Y]')  #Calculate age in years
     bins = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, float('inf')]  # Add infinity for 90+
     labels = [f"{bins[i]}-{bins[i + 1] - 1}" for i in range(len(bins) - 2)] + [f"{bins[-2]}+"]
     df['age_group'] = pd.cut(df['age'], bins=bins, labels=labels, right=False)
@@ -46,7 +46,7 @@ def clean_transform_condition_data(df):
     print("number of duplicates on encounter-->",duplicates.shape[0])
     df['START'] = pd.to_datetime(df['START'])
     df['STOP'] = pd.to_datetime(df['STOP'])
-    #df['STOP'] =  df['STOP'].fillna(df['START'])
+    df['STOP'] =  df['STOP'].fillna(df['START'])
     df.rename({"PATIENT": "PATIENT_ID","START":"START_DIAG","STOP":"STOP_DIAG"}, axis=1, inplace=True)
     return df
 

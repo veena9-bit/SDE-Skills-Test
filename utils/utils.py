@@ -81,15 +81,42 @@ def clean_transform_encounters_data(df):
     df.rename({"PATIENT": "PATIENT_ID", "START": "START_ENC", "STOP": "STOP_ENC"}, axis=1, inplace=True)
     return df
 
-def get_demographic_plot(df,x,y,title):
-    temp_data = df.groupby([x,y]).size().reset_index(name='Count')
+#def get_demographic_plot(df,x,y,title):
+ ##  fig = px.bar(
+   # temp_data,
+    #x='DESCRIPTION',
+    #y='Count',
+    #color=x,
+    #barmode='group',
+    #title=title,
+    #labels={'diagnosis_id': 'Diagnosis ID', 'Count': 'Frequency'}
+#)
+ #   return fig
+
+def get_demographic_plot(df, x, y, title):
+    # Group data and calculate counts
+    temp_data = df.groupby([x, y]).size().reset_index(name='Count')
+    
+    # Calculate total counts for filtering top 10
+    top_10_groups = (
+        temp_data.groupby(y)["Count"]
+        .sum()
+        .nlargest(10)
+        .index
+    )
+    
+    # Filter data for only top 10
+    temp_data = temp_data[temp_data[y].isin(top_10_groups)]
+    
+    # Create the bar chart
     fig = px.bar(
-    temp_data,
-    x='DESCRIPTION',
-    y='Count',
-    color=x,
-    barmode='group',
-    title=title,
-    labels={'diagnosis_id': 'Diagnosis ID', 'Count': 'Frequency'}
-)
+        temp_data,
+        x=y,
+        y='Count',
+        color=x,
+        barmode='group',
+        title=title,
+        labels={y: y.title(), 'Count': 'Frequency'}
+    )
+    
     return fig

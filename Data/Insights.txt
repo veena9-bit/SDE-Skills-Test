@@ -1,0 +1,23 @@
+•	Are there any age groups or gender categories that are more prone to certain diagnoses?
+	Age group 20 has an unusual spike in diseases this is because of disease Anaemia and and further this has been subsided as age group increases . Also there is a decreasing there due to increase in medications
+	
+In general patients spread – female patients are more than male patients and female patients are more prone to diseases
+	Alcohalism,tobacco has seen more in Male.
+	 Pregnancy and miscarriage only in female which shows correctness of data
+	Neck injury more in female
+	impacted morals seen more in female
+	osteoporosis seen more in senior citizens
+	hypertension seen more in 10-19 years 
+	Normal pregnancy is more in 20-29 years and reduces further
+	 Chronic sinustisis seen more in young people comparatively
+	Uhealthy alcohal drinking seen more in young people
+    
+•	Are there any temporal trends in hospital visits or medication use?
+	spike of patient visist seen in 2021 covid years
+	Since 1970 the hospital visits by patients has been increased with an unusual spike in 2011 and 2014.
+•	What are the most common diagnoses or procedures for patients within the dataset?
+	Stress, Social isolation, Victim of partner abusing, prediabetics, Risk activity inlovment are top diagnosis
+	 Assessment of health and social care needs, Depression screening (procedure), Depression screening using Patient Health Ques, Assessment of substance use  are most common once
+
+
+

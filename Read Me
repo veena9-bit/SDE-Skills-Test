@@ -1,0 +1,13 @@
+Project folder structure followed is below 
+Config  - the file path for input and outputb folder where we read the data and output the transformed and cleaned data
+Data - COntains the Source files
+Output - COntains the transformed output files
+utils - Contains the functions
+requirements.txt - COntains the packages that have been loaded for this project
+
+Data load and CLeaning . IPYNB is the Python code file for all the data load, cleaning and wrangling .The file is executed and output to Data load and cleaning output.html in output folder.
+EDA.ipynb - this file consists of all code for exploratory data analysis and required charts with insights. EDAcode and output.html file gives you the netire code with output and ths file is saved in output folder.
+Vsiualizatins.ipynb - This file consists of visualisations that drive the insightd - Visualisations output.html in output folder gives you the code with outputs.
+
+Insights found are written in Insights.txt in Data fodler
+All the ouput html visuals have been exported to output folder.
